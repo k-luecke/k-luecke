@@ -6,7 +6,7 @@ I build verification, provenance, and measurement systems for situations where a
 
 Rust, Python, TypeScript/Node, SystemVerilog. Comfortable from a C-FFI cryptographic primitive up to the CI and settlement plumbing that runs it in production.
 
-Lab site: [driftboundlabs.com](https://driftboundlabs.com) · portfolio: [termbrow.org](https://termbrow.org) · Paxiom: [paxiom.org](https://paxiom.org)
+Lab site: [driftboundlabs.com](https://driftboundlabs.com) · papers: [driftboundlabs.com/papers.html](https://driftboundlabs.com/papers.html) · portfolio: [termbrow.org](https://termbrow.org) · Paxiom: [paxiom.org](https://paxiom.org)
 
 ---
 
@@ -18,7 +18,7 @@ Proof-of-delivery specification (`paxiom.receipt.v0`), zero-dependency SDKs, MCP
 
 - Published at `v0.1.3` across npm ([`@paxiom/receipts`](https://www.npmjs.com/package/@paxiom/receipts)), PyPI ([`paxiom-receipts`](https://pypi.org/project/paxiom-receipts/)), and the Official MCP Registry (`io.github.k-luecke/paxiom-receipts`), verified byte-for-byte via cross-language RFC 8785 & Ed25519 test vectors.
 - Free deterministic offline verification (`POST /v1/receipt/verify`), plus paid Base Mainnet x402 USDC `Transfer`-log settlement attestation (`POST /v1/receipt/verify-live`, `$0.002` USDC) and SSRF-hardened seller preflight scanning (`POST /v1/x402/preflight`, `$0.01` USDC).
-- Offline checks report unverified settlement assertions honestly as `claimed_not_checked` rather than implying on-chain finality.
+- Offline checks report unverified settlement assertions plainly as `claimed_not_checked` rather than implying on-chain finality.
 
 **[811Dog](https://github.com/k-luecke/811Dog)** · Python · TypeScript · operational pipeline
 
@@ -38,33 +38,29 @@ Public-record preservation around the Corporate Transparency Act beneficial-owne
 - Ownership reconstruction uses only separately public sources, with every edge source-addressable.
 - Challenge-aware recovery routes to other lawful public representations — no CAPTCHA solving or access bypass.
 
-**[Time Integrity](https://github.com/k-luecke/time-integrity)** · preregistered measurement package
+---
 
-Preregistered measurement of Schumann-band coherence and inter-site propagation lag between LIGO Hanford and Livingston magnetometers over one six-hour O3 interval.
+### Preprints & reproducible research packages
 
-- **P1** physical coherence: verified.
-- **D2b** physical lag stability: failed (between-window scatter exceeds the frozen threshold).
-- Analysis package complete with checksums and reproduction instructions; large binaries external with recorded hashes.
-- Not a positioning system, timing service, or GNSS replacement.
+Full PDFs, SHA-256 digests, OpenTimestamps proofs, and BibTeX records are indexed at **[driftboundlabs.com/papers.html](https://driftboundlabs.com/papers.html)**:
 
-**[Driftbound Labs (`driftbound-labs`)](https://github.com/k-luecke/driftbound-labs)** · Python · research platform
-
-Reproducible experiments in adaptive assurance, agent populations, nonlinear control, and physical sensing under changing conditions.
-
-- Core experiment primitives, baselines, and the Three Little Pigs benchmark CLI are implemented.
-- Three Little Pigs is an implemented benchmark / research platform — **not** a deployed intelligent system.
-- Site: [driftboundlabs.com](https://driftboundlabs.com)
+- **[time-integrity](https://github.com/k-luecke/time-integrity)** (`v2.0.0`) — *Exterior Clock-Integrity Auditing via Canonical Coherence of the Schumann Resonance Field*. Preregistered 6-hour LIGO H1–L1 O3 vault measurement (`P1` canonical coherence `0.3291`, `z = 24.54`; `P2` `49.9×` vault gain; `D1` `76.6 µs` Carter CRLB; **`D2b` lag stability not supported** at `4.95 ms` scatter vs. `0.796 ms` threshold). Companion WWLLN notebook at **[Geo](https://github.com/k-luecke/Geo)**.
+- **[scp-typed-boundaries](https://github.com/k-luecke/scp-typed-boundaries)** (`v1.0.0` · `5/5` Bitcoin `.ots` proofs) — *Typed Boundaries for Small-Model Web Agents*. Tracks the BrowserGym/MiniWoB++ reference agent across `0.5B–3B` at `3.1×–3.8×` fewer tokens with **zero invalid actions executed** (`0/300` vs. `152/300` unassisted), reporting plainly that the deterministic gate filters rather than repairs.
+- **[tonic-gating](https://github.com/k-luecke/tonic-gating)** (`v1.0.0` · `12/12` Bitcoin `.ots` proofs) — *Phase Selects; It Does Not Amplify*. Twelve preregistered stages testing oscillatory expert selection (`T_hold = 26.8` / `65.0` tokens, cosine demodulation, single-pass attribution `r_φ = 0.869`) alongside null ensemble amplification, lookup dominance under continuous evidence, and `T10` closed as `not informatively tested`.
+- **[network-native-computation](https://github.com/k-luecke/network-native-computation)** (`v1.0.0`) — *Network-Native Computation*. Formal four-term accounting law, Bounded-Probe Structural Ambiguity proof (Theorem 1 & Lemma 1), and 8 reproducible micro-experiments across DNS `DNAME`, CAS Merkle trees, stock Git `v2.55.0`, IPFS Bitswap/DHT, AO checkpoint witnesses, and failed prospective routing (`Exp08`).
+- **[The Physical Layer of the AI Infrastructure Buildout](https://driftboundlabs.com/papers/AI_Infrastructure_Buildout_Whitepaper.pdf)** (Institutional Research Whitepaper) — Point-in-time sovereign docket, permit, and 811 telemetry audit across 31 North American data center and semiconductor fab builds (`2,184 MW` announced, `51.6%` execution-ready, `211-day` median lead time across `9/9` resolved delays, `112.0-week` Kaplan–Meier substation energization median).
+- **[fnwd-v04-retraction](https://github.com/k-luecke/fnwd-v04-retraction)** (`v0.4.0`) — *Autonomous Discovery of Idempotent State-Space Retractions and Conditional Commutation Manifolds*. `115`-class quotient Projection Poset over `F_4093`, 6-gate linearizability and factorial ablation suite, 12-operator blind triage (`3/3` valid promoted, `0/9` unsound promoted), and explicit small-tree DSW latency crossover (`+69.6%` at `N = 150`).
 
 ---
 
-### Supporting
+### Supporting systems & protocols
 
+- **[driftbound-labs](https://github.com/k-luecke/driftbound-labs)** — reproducible-experiment research platform and Three Little Pigs benchmark CLI (implemented benchmark, not a deployed intelligent system).
 - **[research-method](https://github.com/k-luecke/research-method)** — executable eleven-stage research protocol, preregistration templates, and artifact hash verification CLI.
 - **[paxiom](https://github.com/k-luecke/paxiom)** — historical Ethereum Merkle-Patricia state proof & x402 substrate prototype (159 tests, explicit self-audit).
 - **[bls-verifier](https://github.com/k-luecke/bls-verifier)** — narrow Ethereum sync-committee BLS12-381 primitive (native / wasm) with explicit production boundaries.
 - **[zkfwdbld](https://github.com/k-luecke/zkfwdbld)** — prototype trust layer attaching evidence and proof artifacts to automated security findings; README marks where the real prover path ends.
 - **[medals](https://github.com/k-luecke/medals)** — SystemVerilog Selkov + Goldilocks field arithmetic cores verified with Icarus Verilog, cocotb, and Yosys.
-- **[Geo](https://github.com/k-luecke/Geo)** — open research notebook and closure ledgers for the broader Schumann / geophysical experiment lineage.
 - **[TermBrow](https://github.com/k-luecke/TermBrow)** / **[term-brow-static](https://github.com/k-luecke/term-brow-static)** — terminal browser and reading-first portfolio site at [termbrow.org](https://termbrow.org).
 
 ---
@@ -73,4 +69,4 @@ Reproducible experiments in adaptive assurance, agent populations, nonlinear con
 
 I write down what a system **cannot** do as carefully as what it can. Proof boundaries, failed criteria, out-of-scope markers, and "not built yet" tables stay in the READMEs on purpose — a verification system that oversells its guarantees is worse than none.
 
-🔗 [driftboundlabs.com](https://driftboundlabs.com) · [paxiom.org](https://paxiom.org) · [termbrow.org](https://termbrow.org) · [ORCID 0009-0008-0202-7852](https://orcid.org/0009-0008-0202-7852)
+🔗 [driftboundlabs.com](https://driftboundlabs.com) · [driftboundlabs.com/papers.html](https://driftboundlabs.com/papers.html) · [paxiom.org](https://paxiom.org) · [termbrow.org](https://termbrow.org) · [ORCID 0009-0008-0202-7852](https://orcid.org/0009-0008-0202-7852)
