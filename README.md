@@ -20,13 +20,6 @@ Proof-of-delivery specification (`paxiom.receipt.v0`), zero-dependency SDKs, MCP
 - Free deterministic offline verification (`POST /v1/receipt/verify`), plus paid Base Mainnet x402 USDC `Transfer`-log settlement attestation (`POST /v1/receipt/verify-live`, `$0.002` USDC) and SSRF-hardened seller preflight scanning (`POST /v1/x402/preflight`, `$0.01` USDC).
 - Offline checks report unverified settlement assertions honestly as `claimed_not_checked` rather than implying on-chain finality.
 
-**[Monad(1) V7 (`monad-1-arc-agi-3`)](https://github.com/k-luecke/monad-1-arc-agi-3)** · Python · deterministic neuro-symbolic synthesis
-
-Intent-Native Operating System (`INOS v0.7`) and Fuzzy Merkle Forest architecture for interactive discrete reasoning on ARC-AGI-3.
-
-- Verified `100.0%` (`25/25` games, `167/167` levels) official `OperationMode.COMPETITION` scorecard (`6b457c81-1b14-407c-9f8a-d1e119fc72f9`).
-- Falsification-gated synthesis and bounded counterfactual state search with deterministic execution traces.
-
 **[811Dog](https://github.com/k-luecke/811Dog)** · Python · TypeScript · operational pipeline
 
 A monitoring pipeline for Tennessee 811 excavation tickets: Playwright scrapes the public portal, pdfplumber parses linked PDFs, tickets are scored against configurable relevance rules, history lands in SQLite, and a static dashboard plus expiry reminders publish from CI when an active campaign is configured.
