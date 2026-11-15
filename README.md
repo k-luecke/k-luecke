@@ -62,6 +62,7 @@ Full PDFs, SHA-256 digests, OpenTimestamps proofs, and BibTeX records are indexe
 
 ### Supporting systems & protocols
 
+- **[custos](https://github.com/k-luecke/custos)** — ESP32/ESP32-S3 SX1262 LoRa `ChaCha20-Poly1305` sensor telemetry, 24-bit `PCM1808` I2S Goertzel DSP, and Python TDOA localization / hash-chained incident engine (`v0.1.0`).
 - **[secp256k1-kangaroo-lab](https://github.com/k-luecke/secp256k1-kangaroo-lab)** — OpenCL decoupled Pollard's Kangaroo benchmark (Puzzles `#40`–`#44`), modular ECDLP representation tournament, BIP34 regtest verifier, and 16 falsified sub-constant/endomorphism cycles.
 - **[rc4-causal-cones](https://github.com/k-luecke/rc4-causal-cones)** — reduced-modulus RC4 ($m \le 16$) Z3/DFS equivalence, lazy address revelation, and causal-cone frontier experiments (`exp1`–`exp16`).
 - **[switchboard](https://github.com/k-luecke/switchboard)** — single-file offline-first visual countdown timer and RFC 5545 (`.ics`) calendar import/export utility.
