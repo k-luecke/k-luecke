@@ -4,7 +4,7 @@
 
 I build verification, provenance, and measurement systems for situations where a conclusion must remain defensible when conditions, sources, or incentives drift.
 
-Rust, Python, TypeScript/Node, SystemVerilog. Comfortable from a C-FFI cryptographic primitive up to the CI and settlement plumbing that runs it in production.
+Rust, OCaml, C, Python, TypeScript/Node, SystemVerilog. Comfortable from a C-FFI cryptographic primitive up to the CI and settlement plumbing that runs it in production.
 
 Lab site: [driftboundlabs.com](https://driftboundlabs.com) · papers: [driftboundlabs.com/papers.html](https://driftboundlabs.com/papers.html) · portfolio: [termbrow.org](https://termbrow.org) · Paxiom: [paxiom.org](https://paxiom.org)
 
@@ -19,6 +19,13 @@ Proof-of-delivery specification (`paxiom.receipt.v0`), zero-dependency SDKs, MCP
 - Published at `v0.1.3` across npm ([`@paxiom/receipts`](https://www.npmjs.com/package/@paxiom/receipts)), PyPI ([`paxiom-receipts`](https://pypi.org/project/paxiom-receipts/)), and the Official MCP Registry (`io.github.k-luecke/paxiom-receipts`), verified byte-for-byte via cross-language RFC 8785 & Ed25519 test vectors.
 - Free deterministic offline verification (`POST /v1/receipt/verify`), plus paid Base Mainnet x402 USDC `Transfer`-log settlement attestation (`POST /v1/receipt/verify-live`, `$0.002` USDC) and SSRF-hardened seller preflight scanning (`POST /v1/x402/preflight`, `$0.01` USDC).
 - Offline checks report unverified settlement assertions plainly as `claimed_not_checked` rather than implying on-chain finality.
+
+**[IntentNativeOS](https://github.com/k-luecke/IntentNativeOS)** · Rust (`no_std` UEFI) · OCaml 5 · C · experimental capability OS (`v0.3.0-alpha`)
+
+Experimental x86-64 operating system pairing a bare-metal UEFI Rust microkernel (`W^X` paging, per-process `CR3` Ring 0/3 isolation, crash-tested WAL filesystem, VirtIO TCP/UDP, DNSSEC, 1280×800 GOP compositor) and 17 native Ring 3 desktop applications with an OCaml 5 + C typed intent control plane (zero Python or cloud runtime dependencies).
+
+- **55/55** unit, property, adversarial-boundary, and Sentinel qualification suites passing (`dune runtest`), plus cold-build verification of `BOOTX64.EFI` and all 17 Ring 3 `.inapp` packages.
+- Production Beta status remains explicitly withheld behind bare-metal USB HID FIDO2 token passthrough (`BLK-01`) and external cryptographic/kernel audit (`BLK-02`); experimental `research/tonic` and `research/scp` lanes are quarantined `OFF` by default.
 
 **[811Dog](https://github.com/k-luecke/811Dog)** · Python · TypeScript · operational pipeline
 
@@ -55,6 +62,9 @@ Full PDFs, SHA-256 digests, OpenTimestamps proofs, and BibTeX records are indexe
 
 ### Supporting systems & protocols
 
+- **[secp256k1-kangaroo-lab](https://github.com/k-luecke/secp256k1-kangaroo-lab)** — OpenCL decoupled Pollard's Kangaroo benchmark (Puzzles `#40`–`#44`), modular ECDLP representation tournament, BIP34 regtest verifier, and 16 falsified sub-constant/endomorphism cycles.
+- **[rc4-causal-cones](https://github.com/k-luecke/rc4-causal-cones)** — reduced-modulus RC4 ($m \le 16$) Z3/DFS equivalence, lazy address revelation, and causal-cone frontier experiments (`exp1`–`exp16`).
+- **[switchboard](https://github.com/k-luecke/switchboard)** — single-file offline-first visual countdown timer and RFC 5545 (`.ics`) calendar import/export utility.
 - **[driftbound-labs](https://github.com/k-luecke/driftbound-labs)** — reproducible-experiment research platform and Three Little Pigs benchmark CLI (implemented benchmark, not a deployed intelligent system).
 - **[research-method](https://github.com/k-luecke/research-method)** — executable eleven-stage research protocol, preregistration templates, and artifact hash verification CLI.
 - **[paxiom](https://github.com/k-luecke/paxiom)** — historical Ethereum Merkle-Patricia state proof & x402 substrate prototype (159 tests, explicit self-audit).
