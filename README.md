@@ -12,13 +12,13 @@ Lab site: [driftboundlabs.com](https://driftboundlabs.com) · papers: [driftboun
 
 ### Featured work
 
-**[Paxiom Receipts (`paxiom-static`)](https://github.com/k-luecke/paxiom-static)** · TypeScript/Node · Python · proof-bound execution receipts
+**[Paxiom Receipts (`paxiom-static`)](https://github.com/k-luecke/paxiom-static)** · TypeScript/Node/Workers · Python · open MIT delivery-receipt standard
 
-Proof-of-delivery specification (`paxiom.receipt.v0`), zero-dependency SDKs, MCP servers, and live Base Mainnet x402 verification service at [`api.paxiom.org`](https://api.paxiom.org) / [`paxiom.org`](https://paxiom.org).
+Open MIT proof-of-delivery specification (`paxiom.receipt.v0`), `x402` v2 `delivery-receipt` extension draft, zero-dependency SDKs, MCP servers, and free public reference verifier at [`api.paxiom.org`](https://api.paxiom.org) / [`paxiom.org`](https://paxiom.org).
 
-- Published at `v0.1.3` across npm ([`@paxiom/receipts`](https://www.npmjs.com/package/@paxiom/receipts)), PyPI ([`paxiom-receipts`](https://pypi.org/project/paxiom-receipts/)), and the Official MCP Registry (`io.github.k-luecke/paxiom-receipts`), verified byte-for-byte via cross-language RFC 8785 & Ed25519 test vectors.
-- Free deterministic offline verification (`POST /v1/receipt/verify`), plus paid Base Mainnet x402 USDC `Transfer`-log settlement attestation (`POST /v1/receipt/verify-live`, `$0.002` USDC) and SSRF-hardened seller preflight scanning (`POST /v1/x402/preflight`, `$0.01` USDC).
-- Offline checks report unverified settlement assertions plainly as `claimed_not_checked` rather than implying on-chain finality.
+- Published across npm ([`@paxiom/receipts@0.2.1`](https://www.npmjs.com/package/@paxiom/receipts) — Node >= 18 + pure WebCrypto `@paxiom/receipts/web` for Cloudflare Workers/Edge with zero `node:*` or `Buffer` deps), PyPI ([`paxiom-receipts==0.2.0`](https://pypi.org/project/paxiom-receipts/)), and the Official MCP Registry (`io.github.k-luecke/paxiom-receipts`), verified byte-for-byte via cross-language RFC 8785 JCS, `raw-sha256`, & Ed25519 test vectors.
+- Seller `Payment-Receipt` middlewares for Fetch/Workers, Express, and FastAPI/ASGI, plus `/.well-known/x402-keys.json` and W3C `did:web` (`/.well-known/did.json`) signer key discovery.
+- Free rate-limited public reference verification (`POST /v1/receipt/verify`), Base USDC `Transfer`-log settlement counter-attestation (`POST /v1/receipt/verify-live`), and SSRF-hardened seller preflight scanning (`POST /v1/x402/preflight`). Offline checks report unverified settlement assertions plainly as `claimed_not_checked` rather than implying on-chain finality.
 
 **[IntentNativeOS](https://github.com/k-luecke/IntentNativeOS)** · Rust (`no_std` UEFI) · OCaml 5 · C · experimental capability OS (`v0.3.0-alpha`)
 
@@ -67,9 +67,9 @@ Full PDFs, SHA-256 digests, OpenTimestamps proofs, and BibTeX records are indexe
 - **[rc4-causal-cones](https://github.com/k-luecke/rc4-causal-cones)** — reduced-modulus RC4 ($m \le 16$) Z3/DFS equivalence, lazy address revelation, and causal-cone frontier experiments (`exp1`–`exp16`).
 - **[switchboard](https://github.com/k-luecke/switchboard)** — single-file offline-first visual countdown timer and RFC 5545 (`.ics`) calendar import/export utility.
 - **[driftbound-labs](https://github.com/k-luecke/driftbound-labs)** — reproducible-experiment research platform and Three Little Pigs benchmark CLI (implemented benchmark, not a deployed intelligent system).
-- **[research-method](https://github.com/k-luecke/research-method)** — executable eleven-stage research protocol, preregistration templates, and artifact hash verification CLI.
+- **[research-method](https://github.com/k-luecke/research-method)** — executable eleven-stage research protocol, preregistration templates, artifact SHA-256 verification CLI, and verified IBM Heron `ibm_marrakesh` QET hardware case study (`examples/qet-entry001`).
 - **[paxiom](https://github.com/k-luecke/paxiom)** — historical Ethereum Merkle-Patricia state proof & x402 substrate prototype (159 tests, explicit self-audit).
-- **[bls-verifier](https://github.com/k-luecke/bls-verifier)** — narrow Ethereum sync-committee BLS12-381 primitive (native / wasm) with explicit production boundaries.
+- **[bls-verifier](https://github.com/k-luecke/bls-verifier)** — Ethereum Altair sync-committee BLS12-381 verification primitive (Rust + `blst` + Erlang NIF + `O-702` HTTP harness, 36/36 tests) with explicit production boundaries.
 - **[zkfwdbld](https://github.com/k-luecke/zkfwdbld)** — prototype trust layer attaching evidence and proof artifacts to automated security findings; README marks where the real prover path ends.
 - **[medals](https://github.com/k-luecke/medals)** — SystemVerilog Selkov + Goldilocks field arithmetic cores verified with Icarus Verilog, cocotb, and Yosys.
 - **[TermBrow](https://github.com/k-luecke/TermBrow)** / **[term-brow-static](https://github.com/k-luecke/term-brow-static)** — terminal browser and reading-first portfolio site at [termbrow.org](https://termbrow.org).
